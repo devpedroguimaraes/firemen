@@ -34,6 +34,8 @@ jobs:
         run: |
           mkdir _site
           cp -R frontend/public/. _site/
+          cp -R frontend/css _site/css
+          cp -R frontend/js _site/js
 
       - name: Upload do site
         uses: actions/upload-pages-artifact@v3
