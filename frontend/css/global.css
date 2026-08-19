@@ -1,0 +1,909 @@
+/* =========================================================
+   FIREMEN CURSOS
+   IDENTIDADE VISUAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #B51217;
+    --primary-dark: #7F0D11;
+    --primary-light: #D71920;
+
+    --secondary: #171717;
+    --secondary-light: #252525;
+
+    --accent: #D99A24;
+    --accent-light: #F2B84B;
+
+    --background: #FFFFFF;
+    --background-light: #F4F4F2;
+
+    --text: #171717;
+    --text-light: #626262;
+
+    --border: #E2E2E2;
+
+    --danger: #D71920;
+
+    --radius-small: 8px;
+    --radius-medium: 14px;
+    --radius-large: 22px;
+
+    --shadow-small:
+        0 5px 15px rgba(0, 0, 0, 0.06);
+
+    --shadow-medium:
+        0 12px 30px rgba(0, 0, 0, 0.10);
+
+    --shadow-large:
+        0 20px 50px rgba(0, 0, 0, 0.15);
+
+    --transition:
+        0.3s ease;
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+}
+
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 rgba(213, 154, 36, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(213, 154, 36, 0.25);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    background: rgba(23, 23, 23, 0.96);
+    backdrop-filter: blur(12px);
+
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    border-bottom: 2px solid var(--primary);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.header-content {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo img {
+    display: block;
+    width: 105px;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo:hover {
+    transform: scale(1.04);
+}
+
+.logo span {
+    color: var(--accent);
+
+    font-size: 11px;
+
+    display: block;
+
+    letter-spacing: 4px;
+
+    margin-left: 35px;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.main-nav a {
+    position: relative;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 8px 0;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--accent);
+
+    transition:
+        width var(--transition);
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+
+    transform: translateY(-2px);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   BOTÃO LOGIN
+========================================================= */
+
+.main-nav .btn-login {
+    padding: 14px 35px;
+
+    margin-left: 12px;
+
+    border-radius: 30px;
+
+    background: var(--accent);
+
+    color: #171717 !important;
+
+    font-weight: 800 !important;
+
+    box-shadow:
+        0 5px 15px rgba(217, 154, 36, 0.25);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.btn-login::after {
+    display: none;
+}
+
+.btn-login:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 10px 25px rgba(217, 154, 36, 0.35);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(181, 18, 23, 0.45),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #111111 0%,
+            #171717 55%,
+            #7F0D11 100%
+        );
+
+    color: white;
+
+    padding: 45px 0 80px;
+}
+
+
+/* efeito decorativo */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: -150px;
+    top: -150px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(217, 154, 36, 0.15);
+
+    box-shadow:
+        0 0 0 40px rgba(217, 154, 36, 0.03),
+        0 0 0 80px rgba(217, 154, 36, 0.02);
+
+    animation: pulse 5s infinite;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: flex-start;
+
+    min-height: 450px;
+
+    padding-top: 0px;
+}
+
+
+.hero-text {
+    max-width: 750px;
+
+    animation:
+        fadeUp 0.8s ease forwards;
+}
+
+
+.hero-label {
+    display: inline-block;
+
+    color: var(--accent-light);
+
+    font-weight: 800;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(242, 184, 75, 0.4);
+
+    background:
+        rgba(217, 154, 36, 0.08);
+}
+
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+
+    line-height: 1.05;
+
+    margin: 22px 0;
+
+    letter-spacing: -2px;
+}
+
+
+.hero h1 span {
+    color: var(--accent-light);
+
+    position: relative;
+}
+
+
+.hero p {
+    color: #D1D5DB;
+
+    font-size: 18px;
+
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   BOTÕES DO HERO
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 32px;
+
+    flex-wrap: wrap;
+}
+
+
+.btn-primary,
+.btn-secondary {
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-weight: 800;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+
+.btn-primary {
+    background: var(--primary);
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(181, 18, 23, 0.30);
+}
+
+
+.btn-primary:hover {
+    background: var(--primary-light);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(181, 18, 23, 0.40);
+}
+
+
+.btn-secondary {
+    border: 1px solid #64748B;
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+}
+
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+
+    color: var(--accent-light);
+
+    transform: translateY(-4px);
+
+    background:
+        rgba(217, 154, 36, 0.08);
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.courses-section,
+.about-section,
+.contact-section {
+    padding: 95px 0;
+}
+
+
+.about-section {
+    background:
+        linear-gradient(
+            135deg,
+            #F4F4F2,
+            #FFFFFF
+        );
+}
+
+
+.section-header {
+    max-width: 700px;
+
+    margin-bottom: 50px;
+
+    animation:
+        fadeUp 0.7s ease;
+}
+
+
+.section-header > span {
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.section-header h2 {
+    font-size: 40px;
+
+    line-height: 1.2;
+
+    margin: 10px 0 15px;
+}
+
+
+.section-header p {
+    color: var(--text-light);
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   CURSOS
+========================================================= */
+
+.courses-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+.course-card {
+    position: relative;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-large);
+
+    overflow: hidden;
+
+    background: white;
+
+    box-shadow:
+        var(--shadow-small);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+
+    animation:
+        fadeUp 0.8s ease;
+}
+
+
+.course-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--accent)
+        );
+}
+
+
+.course-card:hover {
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(181, 18, 23, 0.25);
+
+    box-shadow:
+        var(--shadow-large);
+}
+
+
+/* =========================================================
+   IMAGEM DO CURSO
+========================================================= */
+
+.course-image {
+    height: 200px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--secondary),
+            var(--primary-dark)
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.course-image::after {
+    content: "🔥";
+
+    position: absolute;
+
+    font-size: 90px;
+
+    opacity: 0.08;
+
+    right: 15px;
+    bottom: -20px;
+
+    transform:
+        rotate(-10deg);
+}
+
+
+.course-content {
+    padding: 28px;
+}
+
+
+.course-category {
+    display: inline-block;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 5px;
+}
+
+
+.course-content h3 {
+    margin: 8px 0;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+}
+
+
+.course-content p {
+    color: var(--text-light);
+
+    margin-bottom: 22px;
+}
+
+
+.course-content a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--primary);
+
+    font-weight: 900;
+
+    transition:
+        gap var(--transition),
+        color var(--transition);
+}
+
+
+.course-content a:hover {
+    color: var(--primary-dark);
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   SOBRE / CONTATO
+========================================================= */
+
+.contact-section {
+    background:
+        var(--secondary);
+
+    color: white;
+}
+
+
+.contact-section .section-header p {
+    color: #BFC3C8;
+}
+
+
+.contact-section .section-header > span {
+    color: var(--accent-light);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    background:
+        #0D0D0D;
+
+    color: white;
+
+    padding: 45px 0;
+
+    border-top:
+        3px solid var(--primary);
+}
+
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    align-items: center;
+}
+
+
+.footer-content strong {
+    font-size: 20px;
+
+    letter-spacing: 1px;
+}
+
+
+.footer-content p {
+    color: #94A3B8;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header-content {
+        flex-direction: column;
+
+        padding: 20px 0;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 80px 0;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(92%, 1200px);
+    }
+
+    .main-nav {
+        gap: 12px;
+    }
+
+    .main-nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 45px 0 70px;
+    }
+
+    .hero-content {
+        min-height: auto;
+        padding-top: 0;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .main-nav .btn-login {
+        margin-left: 0;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        text-align: center;
+        width: 100%;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .courses-section,
+    .about-section,
+    .contact-section {
+        padding: 70px 0;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}

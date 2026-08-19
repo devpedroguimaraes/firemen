@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#111111">
+
+    <meta
+        name="description"
+        content="Área do aluno - FIREMEN CURSOS."
+    >
+
+    <title>Área do Aluno | FIREMEN CURSOS</title>
+
+    <link rel="stylesheet" href="css/global.css">
+
+    <style>
+        /* ==============================
+           ÁREA DE LOGIN
+        ============================== */
+
+        .login-section {
+            min-height: calc(100vh - 220px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 10px;
+            background: #afacac !important;
+        }
+
+        .login-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: min(100%, 460px);
+
+            background: #242424 !important;
+
+            border-radius: 18px;
+            padding: 32px;
+
+            box-shadow:
+            0 20px 50px rgba(0, 0, 0, 0.50);
+
+            border: 1px solid #3a3a3a;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(
+                90deg,
+                #ae1510,
+                #cf8c24,
+                #ae1510
+            );
+        }
+
+        .login-header h1 {
+            margin: 0 0 12px;
+            color: #ffffff !important;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .login-header .hero-label {
+            display: inline-block;
+            color: #cf8c24;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .login-header p {
+            margin: 0;
+            color: #c4c4c4 !important;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ==============================
+           FORMULÁRIO
+        ============================== */
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .form-group label {
+            color: #222;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 100%;
+            box-sizing: border-box;
+            height: 50px;
+            padding: 0 15px;
+
+            border: 1px solid #444444;
+            border-radius: 9px;
+
+            background: #111111 !important;
+            color: #ffffff !important;
+
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s ease;
+        }
+
+        .form-group input[type="email"]:focus,
+        .form-group input[type="password"]:focus {
+            border-color: #ae1510;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(174, 21, 16, 0.10);
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        /* ==============================
+           OPÇÕES
+        ============================== */
+
+        .login-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            font-size: 13px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .remember-me input {
+            width: 15px;
+            height: 15px;
+            accent-color: #ae1510;
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            color: #ae1510;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* ==============================
+           BOTÃO
+        ============================== */
+
+        .login-button {
+            width: 100%;
+            height: 52px;
+            border: none;
+            border-radius: 9px;
+            background: linear-gradient(
+                135deg,
+                #ae1510,
+                #c51b16
+            );
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.2s ease;
+            box-shadow:
+                0 8px 18px rgba(174, 21, 16, 0.20);
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 12px 24px rgba(174, 21, 16, 0.28);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        /* ==============================
+           MENSAGEM
+        ============================== */
+
+        .login-message {
+            min-height: 18px;
+            margin: 0;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* ==============================
+           RODAPÉ DO LOGIN
+        ============================== */
+
+        .login-footer {
+            margin-top: 28px;
+            padding-top: 22px;
+            border-top: 1px solid #eeeeee;
+            text-align: center;
+        }
+
+        .login-footer p {
+            margin: 0 0 5px;
+            color: #333;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .login-footer span {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .back-home {
+            display: block;
+            margin-top: 22px;
+            text-align: center;
+            color: #ae1510;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .back-home:hover {
+            text-decoration: underline;
+        }
+
+        /* ==============================
+           RESPONSIVIDADE
+        ============================== */
+
+        @media (max-width: 600px) {
+
+            .login-section {
+                min-height: auto;
+                padding: 45px 16px;
+            }
+
+            .login-card {
+                padding: 32px 22px;
+                border-radius: 14px;
+            }
+
+            .login-header h1 {
+                font-size: 27px;
+            }
+
+            .login-header p {
+                font-size: 14px;
+            }
+
+            .login-options {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="site-header">
+
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                <img
+                    src="assets/logo.png"
+                    alt="FIREMEN CURSOS"
+                >
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="cursos.html">
+                    Cursos
+                </a>
+
+                <a href="index.html#sobre">
+                    Sobre
+                </a>
+
+                <a href="index.html#contato">
+                    Contato
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO -->
+
+    <main>
+
+        <section class="login-section">
+
+            <div class="container login-container">
+
+                <div class="login-card">
+
+                    <div class="login-header">
+
+                        <span class="hero-label">
+                            FIREMEN CURSOS
+                        </span>
+
+                        <h1>
+                            Área do Aluno
+                        </h1>
+
+                        <p>
+                            Acesse sua conta para acompanhar seus cursos,
+                            notas, pagamentos e informações acadêmicas.
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        class="login-form"
+                        id="loginForm"
+                        method="POST"
+                        action="/login"
+                    >
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Digite seu e-mail"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="password">
+                                Senha
+                            </label>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Digite sua senha"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="login-options">
+
+                            <label class="remember-me">
+
+                                <input
+                                    type="checkbox"
+                                    id="remember"
+                                    name="remember"
+                                >
+
+                                <span>
+                                    Lembrar de mim
+                                </span>
+
+                            </label>
+
+
+                            <a
+                                href="#"
+                                class="forgot-password"
+                            >
+                                Esqueci minha senha
+                            </a>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="login-button"
+                        >
+                            Entrar
+                        </button>
+
+
+                        <p
+                            class="login-message"
+                            id="loginMessage"
+                        ></p>
+
+                    </form>
+
+
+                    <div class="login-footer">
+
+                        <p>
+                            Ainda não possui acesso?
+                        </p>
+
+                        <span>
+                            Entre em contato com a FIREMEN CURSOS.
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="index.html"
+                        class="back-home"
+                    >
+                        ← Voltar para o início
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div>
+
+                    <strong>
+                        FIREMEN CURSOS
+                    </strong>
+
+                    <p>
+                        Educação, capacitação e desenvolvimento profissional.
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <p>
+                        © 2026 FIREMEN CURSOS
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
