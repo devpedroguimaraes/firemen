@@ -101,7 +101,6 @@ a {
     }
 }
 
-
 @keyframes fadeIn {
 
     from {
@@ -112,7 +111,6 @@ a {
         opacity: 1;
     }
 }
-
 
 @keyframes pulse {
 
@@ -125,7 +123,6 @@ a {
         transform: scale(1.04);
     }
 }
-
 
 @keyframes glow {
 
@@ -163,7 +160,6 @@ a {
         0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-
 .header-content {
     min-height: 78px;
 
@@ -181,8 +177,10 @@ a {
 
 .logo img {
     display: block;
+
     width: 105px;
     height: auto;
+
     object-fit: contain;
 }
 
@@ -209,7 +207,9 @@ a {
 
 .main-nav {
     display: flex;
+
     align-items: center;
+
     gap: 28px;
 }
 
@@ -319,9 +319,6 @@ a {
     padding: 45px 0 80px;
 }
 
-
-/* efeito decorativo */
-
 .hero::before {
     content: "";
 
@@ -344,19 +341,19 @@ a {
     animation: pulse 5s infinite;
 }
 
-
 .hero-content {
     position: relative;
+
     z-index: 2;
 
     display: flex;
+
     align-items: flex-start;
 
     min-height: 450px;
 
-    padding-top: 0px;
+    padding-top: 0;
 }
-
 
 .hero-text {
     max-width: 750px;
@@ -364,7 +361,6 @@ a {
     animation:
         fadeUp 0.8s ease forwards;
 }
-
 
 .hero-label {
     display: inline-block;
@@ -387,7 +383,6 @@ a {
         rgba(217, 154, 36, 0.08);
 }
 
-
 .hero h1 {
     font-size: clamp(42px, 6vw, 72px);
 
@@ -398,13 +393,11 @@ a {
     letter-spacing: -2px;
 }
 
-
 .hero h1 span {
     color: var(--accent-light);
 
     position: relative;
 }
-
 
 .hero p {
     color: #D1D5DB;
@@ -429,7 +422,6 @@ a {
     flex-wrap: wrap;
 }
 
-
 .btn-primary,
 .btn-secondary {
     padding: 14px 25px;
@@ -444,7 +436,6 @@ a {
         background var(--transition);
 }
 
-
 .btn-primary {
     background: var(--primary);
 
@@ -453,7 +444,6 @@ a {
     box-shadow:
         0 8px 20px rgba(181, 18, 23, 0.30);
 }
-
 
 .btn-primary:hover {
     background: var(--primary-light);
@@ -464,7 +454,6 @@ a {
         0 15px 30px rgba(181, 18, 23, 0.40);
 }
 
-
 .btn-secondary {
     border: 1px solid #64748B;
 
@@ -473,7 +462,6 @@ a {
     background:
         rgba(255, 255, 255, 0.04);
 }
-
 
 .btn-secondary:hover {
     border-color: var(--accent);
@@ -497,7 +485,6 @@ a {
     padding: 95px 0;
 }
 
-
 .about-section {
     background:
         linear-gradient(
@@ -508,15 +495,19 @@ a {
 }
 
 
+/* =========================================================
+   CABEÇALHO DAS SEÇÕES
+========================================================= */
+
 .section-header {
-    max-width: 700px;
+    width: 100%;
+    max-width: 100%;
 
     margin-bottom: 50px;
 
     animation:
         fadeUp 0.7s ease;
 }
-
 
 .section-header > span {
     color: var(--primary);
@@ -528,7 +519,6 @@ a {
     letter-spacing: 2px;
 }
 
-
 .section-header h2 {
     font-size: 40px;
 
@@ -537,11 +527,34 @@ a {
     margin: 10px 0 15px;
 }
 
-
 .section-header p {
     color: var(--text-light);
 
     font-size: 17px;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   SOBRE
+   TEXTO OCUPA TODA A LARGURA
+========================================================= */
+
+.about-section .section-header {
+    width: 100%;
+    max-width: 100%;
+}
+
+.about-section .section-header p {
+    width: 100%;
+    max-width: 100%;
+
+    text-align: justify;
+
+    text-justify: inter-word;
+
+    line-height: 1.75;
 }
 
 
@@ -557,7 +570,6 @@ a {
 
     gap: 28px;
 }
-
 
 .course-card {
     position: relative;
@@ -584,7 +596,6 @@ a {
         fadeUp 0.8s ease;
 }
 
-
 .course-card::before {
     content: "";
 
@@ -603,7 +614,6 @@ a {
             var(--accent)
         );
 }
-
 
 .course-card:hover {
     transform:
@@ -648,7 +658,6 @@ a {
     overflow: hidden;
 }
 
-
 .course-image::after {
     content: "🔥";
 
@@ -665,11 +674,9 @@ a {
         rotate(-10deg);
 }
 
-
 .course-content {
     padding: 28px;
 }
-
 
 .course-category {
     display: inline-block;
@@ -687,7 +694,6 @@ a {
     margin-bottom: 5px;
 }
 
-
 .course-content h3 {
     margin: 8px 0;
 
@@ -696,13 +702,11 @@ a {
     line-height: 1.2;
 }
 
-
 .course-content p {
     color: var(--text-light);
 
     margin-bottom: 22px;
 }
-
 
 .course-content a {
     display: inline-flex;
@@ -720,7 +724,6 @@ a {
         color var(--transition);
 }
 
-
 .course-content a:hover {
     color: var(--primary-dark);
 
@@ -729,7 +732,7 @@ a {
 
 
 /* =========================================================
-   SOBRE / CONTATO
+   CONTATO
 ========================================================= */
 
 .contact-section {
@@ -739,11 +742,9 @@ a {
     color: white;
 }
 
-
 .contact-section .section-header p {
     color: #BFC3C8;
 }
-
 
 .contact-section .section-header > span {
     color: var(--accent-light);
@@ -766,7 +767,6 @@ a {
         3px solid var(--primary);
 }
 
-
 .footer-content {
     display: flex;
 
@@ -777,13 +777,11 @@ a {
     align-items: center;
 }
 
-
 .footer-content strong {
     font-size: 20px;
 
     letter-spacing: 1px;
 }
-
 
 .footer-content p {
     color: #94A3B8;
@@ -841,11 +839,13 @@ a {
 
     .hero-content {
         min-height: auto;
+
         padding-top: 0;
     }
 
     .hero h1 {
         font-size: 42px;
+
         letter-spacing: -1px;
     }
 
@@ -864,6 +864,7 @@ a {
     .btn-primary,
     .btn-secondary {
         text-align: center;
+
         width: 100%;
     }
 
@@ -881,10 +882,19 @@ a {
         font-size: 32px;
     }
 
+    /* SOBRE NO CELULAR */
+    .about-section .section-header p {
+        text-align: left;
+
+        line-height: 1.7;
+    }
+
     .footer-content {
         flex-direction: column;
+
         align-items: flex-start;
     }
+
 }
 
 
